@@ -1,0 +1,14 @@
+{
+  "id": "org.photoprism",
+  "title": "PhotoPrism",
+  "icon": "file://logo-avatar.png",
+  "version": "0.1.2",
+  "healthCheckPath": "/",
+  "httpPort": 2342,
+  "addons": {
+    "localstorage": {},
+    "mysql": {}
+  },
+  "manifestVersion": 2,
+  "memoryLimit": 524288000
+}

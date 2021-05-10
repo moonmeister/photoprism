@@ -81,7 +81,7 @@ clean-local-config:
 dep-list:
 	go list -u -m -json all | go-mod-outdated -direct
 dep-js:
-	(cd frontend &&	npm install --silent --legacy-peer-deps && npm audit fix)
+	(cd frontend &&	npm install --silent --legacy-peer-deps)
 dep-go:
 	go build -v ./...
 dep-upgrade:
@@ -164,6 +164,9 @@ clean:
 	rm -rf storage/backup
 	rm -rf storage/cache
 	rm -rf frontend/node_modules
+docker-cloudron:
+	scripts/docker-build.sh cloudron $(DOCKER_TAG)
+	scripts/docker-push.sh cloudron $(DOCKER_TAG)
 docker-development:
 	docker pull ubuntu:20.10
 	scripts/docker-build.sh development $(DOCKER_TAG)
