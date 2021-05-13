@@ -11,6 +11,10 @@ elif [[ $1 ]] && [[ -z $2 ]]; then
     echo "Building 'photoprism/$1:preview'...";
     docker build --no-cache --build-arg BUILD_TAG="${DOCKER_TAG}" -t photoprism/$1:preview -f docker/${1/-//}/Dockerfile .
     echo "Done"
+elif [[ $1 ]] && [[ $2 ]] && [[ $3 ]]; then
+    echo "Building 'photoprism/$1:$2-$3'...";
+    docker build --no-cache --build-arg BUILD_TAG="${DOCKER_TAG}" --build-arg UBUNTU_VERSION="$3" -t photoprism/$1:$2-$3 -t photoprism/$1:$3 -f docker/${1/-//}/Dockerfile .
+
 else
     echo "Building 'photoprism/$1:$2'...";
     docker build --no-cache --build-arg BUILD_TAG=$2 -t photoprism/$1:latest -t photoprism/$1:$2 -f docker/${1/-//}/Dockerfile .

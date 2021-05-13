@@ -1,5 +1,17 @@
-FROM moonmeister/photoprism-build as build
-# Same base image as photoprism/development
+# FROM photoprism/development:focal as build
+
+# # Set up project directory
+# WORKDIR "/go/src/github.com/photoprism/photoprism"
+# COPY . .
+
+# # Build PhotoPrism
+# RUN make dep build-js install
+
+FROM photoprism/photoprism-build:latest as build
+
+
+
+
 FROM cloudron/base:3.0.0@sha256:455c70428723e3a823198c57472785437eb6eab082e79b3ff04ea584faf46e92
 
 # Set environment variables

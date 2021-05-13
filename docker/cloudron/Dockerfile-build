@@ -1,5 +1,5 @@
 #this file is temporary so I didn't have to keep rebuilding on my slow laptop
-FROM moonmeister/photoprism-dev:test2 as build
+FROM photoprism/development:focal as build
 
 # Set up project directory
 WORKDIR "/go/src/github.com/photoprism/photoprism"

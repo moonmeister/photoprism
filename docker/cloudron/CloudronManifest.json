@@ -2,6 +2,7 @@
   "id": "org.photoprism",
   "title": "PhotoPrism",
   "icon": "file://logo-avatar.png",
+  "postInstallMessage": "file://POSTINSTALL.md",
   "version": "0.1.2",
   "healthCheckPath": "/",
   "httpPort": 2342,

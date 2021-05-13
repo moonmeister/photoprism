@@ -1,4 +1,6 @@
-FROM ubuntu:20.04
+ARG UBUNTU_VERSION=20.10
+
+FROM ubuntu:${UBUNTU_VERSION}
 
 LABEL maintainer="Michael Mayer <michael@liquidbytes.net>"
 
